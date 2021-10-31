@@ -2,10 +2,51 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="StudentSolution.Views.MainPage"
-             Title="{Binding Title}">
+             Title="opportunity">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
-    </StackLayout>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Logout"
+    
+                     Command="{Binding LogoutCommand}"
+                     Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <Label Text="Hehfgnsd,svasx"/>
 
+    <ListView ItemsSource="{Binding Opportunities}"
+              ItemSelected="ListView_ItemSelected"
+              HasUnevenRows="True"
+              SeparatorVisibility="None">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Frame Margin="8, 4"
+                           HasShadow="True"
+                           BackgroundColor="#E4DEED"
+                           CornerRadius="5">
+                        <StackLayout>
+                            <Label 
+                                   LineBreakMode="TailTruncation"
+                                    Grid.Column="1"
+                                HorizontalOptions="StartAndExpand"
+                                   Text="{Binding Title}"
+                                   TextColor="Black"
+                                   FontAttributes="Bold"
+                                   MaxLines="1"
+                                   FontSize="16"/>
+                            <BoxView Color="#481F88"
+                                     HeightRequest="1"/>
+                                <Label 
+                                   LineBreakMode="TailTruncation"
+                                   Text="{Binding Details}"
+                                   TextColor="Black"
+                                   MaxLines="2"
+                                   HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </Grid>
+                    </Frame>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    
 </ContentPage>

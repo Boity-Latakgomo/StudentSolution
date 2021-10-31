@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="StudentSolution.Views.RegisterPage"
+             BackgroundColor="#2C1D4D">
+
+    <StackLayout Padding="12"
+                 VerticalOptions="CenterAndExpand">
+        <Label Text="Register"
+               FontSize="28"
+               TextColor="#CCC9D1"
+               HorizontalTextAlignment="Center" 
+               FontAttributes="Bold"
+               Margin="8, 8, 8, 24"/>
+        <Entry Placeholder="Enter name"
+               TextColor="White"
+               Text="{Binding Name}"
+               PlaceholderColor="#434243"/>
+        <Entry Placeholder="Enter surname"
+               TextColor="White"
+               Text="{Binding Surname}"
+               PlaceholderColor="#434243"/>
+        <Entry Placeholder="Enter email"
+               TextColor="White"
+               Text="{Binding Email}"
+               PlaceholderColor="#434243"/>
+        <Entry Placeholder="Enter password"
+               TextColor="White"
+               PlaceholderColor="#434243"
+               Text="{Binding Password}"
+               IsPassword="True"/>
+        <Label Text="Do you have account? sign in"
+               TextColor="#2E8CD6"
+               HorizontalOptions="Center"
+                   Margin="0, 24, 0, 0"
+                   TextDecorations="Underline">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding ToLoginCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+
+        <Button Text="submit"
+                BackgroundColor="#B02079"
+                TextColor="#C7C7C7" 
+                Margin="30, 8, 30, 12"
+                CornerRadius="18"
+                Command="{Binding RegisterCommand}"/>
+    </StackLayout>
+</ContentPage>
