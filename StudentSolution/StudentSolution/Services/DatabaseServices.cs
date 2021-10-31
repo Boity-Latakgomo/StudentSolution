@@ -57,8 +57,8 @@ namespace StudentSolution.Services
         public async Task<List<Opportunity>> GetAllOpportunities()
         {
             return (await firebase
-             .Child("EmployeeSolution")
-            .Child("LeaveApplication")
+              .Child("StudentSolution")
+            .Child("Opportunities")
               .OnceAsync<Opportunity>()).Select(item => new Opportunity
               {
                   Title = item.Object.Title,

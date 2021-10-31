@@ -10,7 +10,6 @@
                      Command="{Binding LogoutCommand}"
                      Order="Secondary"/>
     </ContentPage.ToolbarItems>
-    <Label Text="Hehfgnsd,svasx"/>
 
     <ListView ItemsSource="{Binding Opportunities}"
               ItemSelected="ListView_ItemSelected"
@@ -35,14 +34,13 @@
                                    FontSize="16"/>
                             <BoxView Color="#481F88"
                                      HeightRequest="1"/>
-                                <Label 
+                            <Label 
                                    LineBreakMode="TailTruncation"
                                    Text="{Binding Details}"
                                    TextColor="Black"
                                    MaxLines="2"
                                    HorizontalOptions="StartAndExpand"/>
-                            </StackLayout>
-                        </Grid>
+                        </StackLayout>
                     </Frame>
                 </ViewCell>
             </DataTemplate>
